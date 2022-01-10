@@ -30,13 +30,5 @@ config.read(path_config_file)
 nitrado_access_token = config.get('Tokens', 'access_token')
 game_server_id = config.get('GameServer', 'gameServerId')
 
-def updateTokens(access_token, refresh_token):
-    global nitrado_access_token
-    nitrado_access_token = access_token
-    config.set('Tokens', 'access_token', access_token)
-    with open("Settings.ini", "w") as configfile:
-        config.write(configfile)
-        configfile.close()
-
 def log(message):
     print(datetime.now().strftime("%d/%m/%Y %H:%M:%S") + ' ' + message)
